@@ -78,15 +78,16 @@ export function createLinkDialog(input?: string) {
 	}
 	const c = new Ctrl()
 
-	const {protocol, host} = window.location
+	const {protocol: p, host} = window.location
+	const protocol = p.replace(/:$/, '')
 
 	new Dialog(
 		'Create link',
 		() => {
-			const url = `${protocol}//${host}#input=${c.input}`
+			const url = `${protocol}://${host}#input=${c.input}`
 			return html`<!-- -->
-				<div class="flex flex-col gap-2 content-stretch">
-					${c.fb.TEXTFIELD('Input', 'input', {variant: 'filled'})}<br />
+				<div class="flex flex-col gap-5 content-stretch">
+					${c.fb.TEXTFIELD('Input', 'input', {variant: 'filled'})}
 					<md-filled-tonal-button @click=${() => copyToClipboard(url)}>
 						<md-icon slot="icon">content_copy</md-icon>
 						<span>${url}</span>
