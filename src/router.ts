@@ -19,6 +19,9 @@ export const router = new Router(async ({location, parts}) => {
 		store.input = hash.$('input')!
 		// hash.$('input', undefined)
 	}
+	if (window.location.host.endsWith('.github.io')) {
+		parts = parts.slice(1)
+	}
 	if (parts.length === 0) {
 		store.page = 'main'
 	} else {

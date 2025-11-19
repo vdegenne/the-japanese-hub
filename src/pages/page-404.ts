@@ -19,7 +19,7 @@ declare global {
 `)
 export class Page404 extends PageElement {
 	render() {
-		return html`WTF`
+		return html`404 NOT FOUND`
 	}
 }
 
