@@ -43,7 +43,7 @@ class GamepadController extends ReactiveController {
 						break
 				}
 			})
-			gamepad.for(map.RIGHT_BUTTONS_LEFT).before(({mode}) => {
+			gamepad.for(map.LEFT_BUTTONS_LEFT).before(({mode}) => {
 				switch (mode) {
 					case Mode.NORMAL:
 						if (store.input) {
@@ -52,7 +52,7 @@ class GamepadController extends ReactiveController {
 						break
 				}
 			})
-			gamepad.for(map.RIGHT_BUTTONS_RIGHT).before(({mode}) => {
+			gamepad.for(map.LEFT_BUTTONS_RIGHT).before(({mode}) => {
 				switch (mode) {
 					case Mode.NORMAL:
 						if (store.input) {
@@ -93,13 +93,6 @@ class GamepadController extends ReactiveController {
 				}
 			})
 
-			gamepad.for(map.LEFT_BUTTONS_RIGHT).before(({mode}) => {
-				switch (mode) {
-					case Mode.NORMAL:
-						break
-				}
-			})
-
 			gamepad.for(map.LEFT_BUTTONS_TOP).before(({mode}) => {
 				switch (mode) {
 					case Mode.NORMAL:
@@ -128,17 +121,6 @@ class GamepadController extends ReactiveController {
 						if (store.input) {
 							lensHistoryOpen(store.input, true)
 						}
-						break
-				}
-			})
-
-			gamepad.for(map.LEFT_BUTTONS_LEFT).before(({mode}) => {
-				switch (mode) {
-					case Mode.NORMAL:
-						break
-					case Mode.PRIMARY:
-						break
-					case Mode.TERTIARY:
 						break
 				}
 			})
