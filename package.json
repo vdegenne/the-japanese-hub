@@ -17,7 +17,8 @@
 		},
 		"build": {
 			"dependencies": [
-				"build:vite"
+				"build:vite",
+				"pwa-assets"
 			]
 		},
 		"build:server": {
@@ -55,6 +56,9 @@
 		},
 		"build:vite": {
 			"command": "vite build",
+			"dependencies": [
+				"pwa-assets"
+			],
 			"files": [
 				"./vite.config.js",
 				"./src/",
