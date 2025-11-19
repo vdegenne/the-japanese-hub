@@ -92,7 +92,7 @@
     "@vdegenne/mini-gamepad": "^0.4.7",
     "@vdegenne/mini-rest": "^0.3.2",
     "@vdegenne/rollup-plugin-minify-html": "^1.0.6",
-    "@vdegenne/router": "file:../router",
+    "@vdegenne/router": "^0.1.8",
     "@vdegenne/speech": "^0.5.0",
     "@vite-pwa/assets-generator": "^1.0.2",
     "chalk": "^5.6.2",
