@@ -5,7 +5,9 @@ import {store} from './store.js'
 import {
 	googleImagesOpen,
 	googleTranslateOpen,
+	jishoOpen,
 	lensHistoryOpen,
+	weblioOpen,
 } from '@vdegenne/links'
 
 class GamepadController extends ReactiveController {
@@ -44,6 +46,18 @@ class GamepadController extends ReactiveController {
 			gamepad.for(map.RIGHT_BUTTONS_LEFT).before(({mode}) => {
 				switch (mode) {
 					case Mode.NORMAL:
+						if (store.input) {
+							weblioOpen(store.input)
+						}
+						break
+				}
+			})
+			gamepad.for(map.RIGHT_BUTTONS_RIGHT).before(({mode}) => {
+				switch (mode) {
+					case Mode.NORMAL:
+						if (store.input) {
+							jishoOpen(store.input)
+						}
 						break
 				}
 			})
@@ -67,10 +81,6 @@ class GamepadController extends ReactiveController {
 						break
 					case Mode.TERTIARY:
 						break
-				}
-			})
-			gamepad.for(map.RIGHT_BUTTONS_RIGHT).before(({mode}) => {
-				if (mode === Mode.NORMAL) {
 				}
 			})
 
