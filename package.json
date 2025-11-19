@@ -17,8 +17,7 @@
 		},
 		"build": {
 			"dependencies": [
-				"build:vite",
-				"pwa-assets"
+				"build:vite"
 			]
 		},
 		"build:server": {
@@ -51,14 +50,12 @@
 			"service": true,
 			"command": "vite --host",
 			"dependencies": [
-				"vuc"
+				"vuc",
+				"pwa-assets"
 			]
 		},
 		"build:vite": {
 			"command": "vite build",
-			"dependencies": [
-				"pwa-assets"
-			],
 			"files": [
 				"./vite.config.js",
 				"./src/",
@@ -67,6 +64,9 @@
 			],
 			"output": [
 				"./dist"
+			],
+			"dependencies": [
+				"pwa-assets"
 			]
 		},
 		"pwa-assets": {
@@ -127,3 +127,4 @@
 		"pwa-assets": "wireit"
 	}
 }
+
