@@ -32,6 +32,7 @@ export {default as SVG_LOGO} from '/logo.svg?raw'
 
 export {default as ICO_WEBLIO} from '/img/weblio.ico'
 export {default as ICO_JISHO} from '/img/jisho.ico'
+export {default as ICO_MDBG} from '/img/mdbg.ico'
 
 // If no "?inline" is used, Vite will use the final URL to the resource in the dist directory.
 

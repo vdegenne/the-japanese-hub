@@ -1,10 +1,10 @@
 import {type PropertyValues} from 'snar'
-// import {toast} from 'toastit'
+import toast from 'toastit'
 
 export function copyToClipboard(text: string) {
 	navigator.clipboard.writeText(text)
 	// TODO: be careful activating that if you share utils with server.
-	// toast('Copied to clipboard.')
+	toast('Copied to clipboard.')
 }
 
 export function sleep(milli: number = 1000) {
@@ -68,7 +68,7 @@ export function getElementsTree(node: Element): Promise<Element[]> {
 }
 export async function getElementInTree(
 	from: Element,
-	condition: (element: Element) => boolean
+	condition: (element: Element) => boolean,
 ): Promise<Element | undefined> {
 	for (const element of await getElementsTree(from)) {
 		if (condition(element)) {
@@ -143,10 +143,10 @@ export async function loadDataFromFile(): Promise<string> {
 
 export function propertyValuesToJson<T>(
 	changed: PropertyValues<T>,
-	object: T
+	object: T,
 ): Partial<T> {
 	return Object.fromEntries(
-		[...changed.keys()].map((key) => [key, object[key as keyof typeof object]])
+		[...changed.keys()].map((key) => [key, object[key as keyof typeof object]]),
 	) as Partial<T>
 }
 
