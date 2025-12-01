@@ -37,9 +37,13 @@ window.addEventListener('keydown', async (event: KeyboardEvent) => {
 })
 
 window.addEventListener('voice-recorder-submit', (e: Event) => {
-	const {input} = (e as CustomEvent).detail
+	const {input, alt} = (e as CustomEvent).detail
 	if (input) {
-		store.input = input
+		if (alt) {
+			store.input += input
+		} else {
+			store.input = input
+		}
 	}
 })
 
